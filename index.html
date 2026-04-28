@@ -136,23 +136,8 @@
     }
   </style>
 </head>
+
 <body>
-  <script src="//embed.typeform.com/next/embed.js"></script>
-<script>
-  window.addEventListener("DOMContentLoaded", function () {
-    const { createPopup } = window.tf;
-    const popup = createPopup("https://form.typeform.com/to/cTQdgtQg");
-
-    document.querySelectorAll("[data-form-link]").forEach(el => {
-      el.addEventListener("click", function (e) {
-        e.preventDefault();
-        popup.open();
-      });
-    });
-  });
-</script>
-</body>
-
   <div class="page">
     <header>
       <div class="container nav">
@@ -273,8 +258,20 @@
     </footer>
   </div>
 
+  <script src="//embed.typeform.com/next/embed.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    window.addEventListener("DOMContentLoaded", function () {
+      const popup = window.tf.createPopup("https://form.typeform.com/to/cTQdgtQg");
+
+      document.querySelectorAll("[data-form-link]").forEach(el => {
+        el.addEventListener("click", function (e) {
+          e.preventDefault();
+          popup.open();
+        });
+      });
+    });
   </script>
 </body>
 </html>
