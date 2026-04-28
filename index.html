@@ -137,11 +137,14 @@
   </style>
 </head>
 <body>
-  <!-- Replace this with your live Google Form URL -->
   <script>
-    const GOOGLE_FORM_URL = "https://forms.gle/YOUR_FORM_LINK_HERE";
+    const FORM_URL = "https://g9q1rconr5t.typeform.com/to/cTQdgtQg";
+
     document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll("[data-form-link]").forEach(el => el.setAttribute("href", GOOGLE_FORM_URL));
+      document.querySelectorAll("[data-form-link]").forEach(el => {
+        el.setAttribute("href", FORM_URL);
+        el.setAttribute("target", "_blank"); // ensures new tab
+      });
     });
   </script>
 
