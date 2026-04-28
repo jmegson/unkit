@@ -1,1 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unkit | Level up your lettuce</title>
+  <meta name="description" content="Unkit turns your greens into craveable, satisfying lunches in under 2 minutes. Salad upgrade kits — no greens included." />
+  <meta property="og:title" content="Unkit | Level up your lettuce" />
+  <meta property="og:description" content="You bring greens. We bring flavor. Join the early access list." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --green: #1F4D3A;
+      --lettuce: #8FD36A;
+      --cream: #F6F4EF;
+      --ink: #15251E;
+      --muted: #5D6B63;
+      --white: #FFFFFF;
+      --orange: #FF8F3C;
+      --shadow: 0 18px 48px rgba(31,77,58,.14);
+      --radius: 28px;
+    }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+
+    a { color: inherit; }
+    .page { overflow: hidden; }
+    .container { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
+
+    header {
+      padding: 22px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(246,244,239,.86);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(31,77,58,.08);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 900;
+  font-size: 24px;
+  letter-spacing: -.04em;
+}
+
+.logo-mark {
+  width: 38px;
+  height: 38px;
+  position: relative;
+  flex: 0 0 38px;
+}
+
+.logo-bag {
+  position: absolute;
+  left: 9px;
+  top: 4px;
+  width: 20px;
+  height: 19px;
+  background: var(--green);
+  border-radius: 3px 3px 2px 2px;
+  clip-path: polygon(
+    0 18%,
+    12% 0,
+    24% 18%,
+    36% 0,
+    48% 18%,
+    60% 0,
+    72% 18%,
+    84% 0,
+    100% 18%,
+    100% 100%,
+    0 100%
+  );
+}
+
+.logo-bag::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  width: 10px;
+  height: 2px;
+  background: var(--cream);
+  border-radius: 999px;
+}
+
+.logo-lettuce {
+  position: absolute;
+  left: 5px;
+  bottom: 6px;
+  width: 28px;
+  height: 14px;
+  background: var(--lettuce);
+  border-radius: 999px 999px 70% 70%;
+  z-index: 2;
+}
+
+.logo-lettuce::before,
+.logo-lettuce::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 14px;
+  height: 14px;
+  background: var(--lettuce);
+  border-radius: 50%;
+}
+
+.logo-lettuce::before {
+  left: -4px;
+}
+
+.logo-lettuce::after {
+  right: -4px;
+}
+    .nav-links { display: flex; gap: 22px; align-items: center; font-size: 14px; color: var(--muted); }
+    .nav-links a { text-decoration: none; font-weight: 700; }
+
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: 0 22px; border-radius: 999px;
+      background: var(--green); color: var(--white); text-decoration: none;
+      font-weight: 900; box-shadow: 0 12px 26px rgba(31,77,58,.18);
+      transition: transform .15s ease, box-shadow .15s ease;
+      border: 0; cursor: pointer;
+    }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 16px 30px rgba(31,77,58,.24); }
+    .button.secondary { background: var(--white); color: var(--green); border: 1px solid rgba(31,77,58,.12); box-shadow: none; }
+
+    .hero { padding: 74px 0 56px; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 54px; align-items: center; }
+    .eyebrow {
+      display: inline-flex; gap: 8px; align-items: center; padding: 8px 13px; border-radius: 999px;
+      background: rgba(143,211,106,.24); color: var(--green); font-weight: 900; font-size: 13px;
+      margin-bottom: 18px;
+    }
+    h1 { margin: 0; font-size: clamp(46px, 7vw, 86px); line-height: .9; letter-spacing: -.075em; color: var(--green); }
+    .hero p { margin: 22px 0 0; font-size: clamp(19px, 2.2vw, 25px); color: var(--muted); max-width: 620px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; align-items: center; }
+    .microcopy { font-size: 13px; color: var(--muted); font-weight: 700; }
+
+    .bio-card {
+      background: var(--white); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow);
+      border: 1px solid rgba(31,77,58,.08); transform: rotate(1.2deg);
+    }
+    .bio-label { color: #777; font-size: 22px; margin-bottom: 8px; }
+    .bio-line { font-size: clamp(23px, 2.8vw, 32px); font-weight: 900; letter-spacing: -.035em; display: flex; gap: 10px; align-items: flex-start; margin: 8px 0; }
+    .hashtag { color: #3f55ff; }
+
+    .section { padding: 56px 0; }
+    .section-title { font-size: clamp(32px, 4.8vw, 56px); line-height: .98; letter-spacing: -.06em; color: var(--green); margin: 0 0 16px; }
+    .section-sub { margin: 0 0 28px; color: var(--muted); font-size: 19px; max-width: 720px; }
+
+    .problem { background: var(--green); color: var(--white); padding: 64px 0; }
+    .problem .section-title { color: var(--white); }
+    .problem .section-sub { color: rgba(255,255,255,.78); }
+    .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .problem-card { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16); border-radius: 24px; padding: 22px; font-weight: 900; font-size: 19px; }
+
+    .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .step, .pillars .card, .kit-card {
+      background: var(--white); border: 1px solid rgba(31,77,58,.08); border-radius: 24px; padding: 24px; box-shadow: 0 10px 28px rgba(31,77,58,.08);
+    }
+    .num { width: 38px; height: 38px; border-radius: 50%; background: var(--lettuce); color: var(--green); display: grid; place-items: center; font-weight: 1000; margin-bottom: 16px; }
+    .step h3, .card h3, .kit-card h3 { margin: 0 0 8px; font-size: 22px; letter-spacing: -.035em; color: var(--green); }
+    .step p, .card p, .kit-card p { margin: 0; color: var(--muted); }
+
+    .formula {
+      margin: 30px 0 0; background: linear-gradient(135deg, var(--white), rgba(143,211,106,.25));
+      border-radius: var(--radius); border: 1px solid rgba(31,77,58,.08); padding: 26px;
+      text-align: center; font-size: clamp(24px, 4vw, 46px); font-weight: 1000; color: var(--green); letter-spacing: -.05em;
+    }
+
+    .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .kits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .kit-card { min-height: 180px; display: flex; flex-direction: column; justify-content: space-between; }
+    .badge { display: inline-flex; width: fit-content; padding: 6px 10px; border-radius: 999px; background: rgba(255,143,60,.16); color: #9A4B0E; font-weight: 900; font-size: 12px; }
+
+    .cta { padding: 72px 0; }
+    .cta-box { background: var(--green); color: var(--white); border-radius: 36px; padding: 44px; display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: center; box-shadow: var(--shadow); }
+    .cta h2 { margin: 0; font-size: clamp(34px, 5vw, 62px); line-height: .95; letter-spacing: -.06em; }
+    .cta p { color: rgba(255,255,255,.76); font-size: 19px; margin: 16px 0 0; }
+    .cta .button { background: var(--lettuce); color: var(--green); width: fit-content; }
+    .cta-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+
+    footer { padding: 28px 0 46px; color: var(--muted); font-size: 14px; }
+
+    @media (max-width: 860px) {
+      .nav-links a:not(.button) { display: none; }
+      .hero { padding-top: 48px; }
+      .hero-grid, .cta-box { grid-template-columns: 1fr; }
+      .bio-card { transform: none; }
+      .problem-grid, .how-grid, .pillars, .kits { grid-template-columns: 1fr; }
+      .cta-box { padding: 30px; border-radius: 28px; }
+      .button { width: 100%; }
+      .hero-actions { align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const FORM_URL = "https://g9q1rconr5t.typeform.com/to/cTQdgtQg";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-form-link]").forEach(el => {
+        el.setAttribute("href", FORM_URL);
+        el.setAttribute("target", "_blank"); // ensures new tab
+      });
+    });
+  </script>
+
+  <div class="page">
+    <header>
+      <div class="container nav">
+        <div class="logo">
+  <span class="logo-mark" aria-hidden="true">
+    <span class="logo-bag"></span>
+    <span class="logo-lettuce"></span>
+  </span>
+  Unkit
+</div>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#how">How it works</a>
+          <a href="#kits">Kits</a>
+          <a class="button" data-form-link href="#">Get first box access</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">🥗 Salad kits, minus the sad greens</div>
+            <h1>Level up your lettuce.</h1>
+            <p>You already buy great produce. Unkit turns it into a craveable, satisfying lunch in under 2 minutes — just add your greens and protein.</p>
+            <div class="hero-actions">
+              <a class="button" data-form-link href="#">Signup for our first drop</a>
+              <a class="button secondary" href="#kits">See flavor ideas</a>
+              <span class="microcopy">Early testers get first dibs + discounts.</span>
+            </div>
+          </div>
+
+          <aside class="bio-card" aria-label="Instagram bio style value proposition">
+            <div class="bio-label">Salad upgrade kits</div>
+            <div class="bio-line">🥬 You bring the greens</div>
+            <div class="bio-line">🔥 We bring the flavor</div>
+            <div class="bio-line">⏱️ Craveable lunch in 2 min</div>
+            <div class="bio-line">🧀 Nutritious, real ingredients</div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="problem">
+        <div class="container">
+          <h2 class="section-title">Eating well should not feel like homework.</h2>
+          <p class="section-sub">For people with fresh lettuce, CSA greens, garden produce, or a “healthy lunch” plan that keeps turning into takeout.</p>
+          <div class="problem-grid">
+            <div class="problem-card">Grocery salad kits are bland, wilted, and full of junky ingredients.</div>
+            <div class="problem-card">Building a great salad with real food takes too many ingredients.</div>
+            <div class="problem-card">You want lunch to feel easy, fresh, exciting, and not $17.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="how">
+        <div class="container">
+          <h2 class="section-title">Meet Unkit.</h2>
+          <p class="section-sub">Flavor-packed salad upgrade kits with crunchy toppings, bold dressings, and real ingredients, just BYO greens or grains. (No sad bag of greens included.)</p>
+          <div class="how-grid">
+            <div class="step">
+              <div class="num">1</div>
+              <h3>Start with greens</h3>
+              <p>Use your own lettuce, CSA haul, garden harvest, or grocery greens.</p>
+            </div>
+            <div class="step">
+              <div class="num">2</div>
+              <h3>Add your Unkit</h3>
+              <p>Open one flavor kit with dressing, crunch, and craveable add-ins.</p>
+            </div>
+            <div class="step">
+              <div class="num">3</div>
+              <h3>Make it a meal</h3>
+              <p>Add protein if you want, toss, and lunch is handled.</p>
+            </div>
+          </div>
+          <div class="formula">Greens + Unkit + Protein = Lunch that hits</div>
+        </div>
+      </section>
+
+      <section class="section" id="kits">
+        <div class="container">
+          <h2 class="section-title">Flavor ideas we’re testing.</h2>
+          <p class="section-sub">Vote for what you would actually buy in our survey and get a discount as a thank you! The first drop will be shaped by early testers.</p>
+          <div class="kits">
+            <div class="kit-card"><span class="badge">Bold + crunchy</span><h3>Spicy Caesar Crunch</h3><p>Garlicky, creamy, spicy, snacky.</p></div>
+            <div class="kit-card"><span class="badge">Fresh + zippy</span><h3>Lemony Basil Brightener</h3><p>Bright dressing, seeds, parmesean crunch.</p></div>
+            <div class="kit-card"><span class="badge">Summer energy</span><h3>Elote Lime Crunch</h3><p>Corn, lime, chili, creamy tang.</p></div>
+            <div class="kit-card"><span class="badge">Comfort salad</span><h3>Herby Ranch Deluxe</h3><p>Big ranch flavor, cleaner feel.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="waitlist">
+        <div class="container">
+          <div class="cta-box">
+            <div>
+              <h2>Want the first taste?</h2>
+              <p>Join the early access list and help shape the first Unkit drop.</p>
+            </div>
+            <div class="cta-actions">
+              <a class="button" data-form-link href="#">Take the 2 minute survey</a>
+              <span class="microcopy" style="color: rgba(255,255,255,.72);">No spam. Just early access + product testing.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">© <span id="year"></span> Unkit. All Rights Reserved.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
