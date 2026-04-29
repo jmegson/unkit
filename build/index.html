@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Build your Unkit box</title>
-  <meta name="description" content="Build your first Unkit mixed box." />
+  <title>Checkout | Unkit</title>
+  <meta name="description" content="Reserve your first Unkit mixed box." />
   <link rel="stylesheet" href="/style.css" />
 </head>
 
@@ -17,11 +17,15 @@
 
   <main class="simple-page checkout-page">
     <section class="capture-card checkout-card">
-      <p class="eyebrow">First drop checkout</p>
-      <h1>Your mixed Unkit box</h1>
+
+      <div class="checkout-step">Checkout · Step 1 of 2</div>
+
+      <p class="eyebrow">First drop reservation</p>
+
+      <h1>Your first Unkit box</h1>
+
       <p class="lede">
-        Chef-curated salad upgrades made with craveable crunch, bold dressings, and pantry-quality toppings.
-        Just add your greens and protein.
+        8 chef-curated salad upgrade kits. Just add your greens and protein.
       </p>
 
       <div class="checkout-highlight">
@@ -32,45 +36,49 @@
         <div class="price">$89</div>
       </div>
 
-      <div class="flavor-grid">
+      <div class="flavor-grid compact-flavors">
         <div class="flavor-card">
           <h3>Smoky Adobo Lime</h3>
-          <p>Warm, comforting, bright, and loaded with texture.</p>
+          <p>Warm, bright, smoky, and loaded with texture.</p>
         </div>
+
         <div class="flavor-card">
           <h3>Spicy Caesar Crunch</h3>
-          <p>Big flavor, smoky heat, Caesar-ish comfort.</p>
+          <p>Bold, creamy, savory, with a little heat.</p>
         </div>
+
         <div class="flavor-card">
           <h3>Basily Lemon Parm</h3>
-          <p>Salty, zippy, cheesy, and pantry-perfect.</p>
+          <p>Zippy, salty, cheesy, and pantry-perfect.</p>
         </div>
       </div>
 
       <div class="order-summary">
-      <div class="summary-row">
+        <div class="summary-row">
           <span>Mixed box · 8 kits</span>
           <strong>$89.00</strong>
-      </div>
-
-      <div class="summary-row">
-          <span>Shipping</span>
-          <strong>Free</strong>
-      </div>
-
-      <div class="summary-row discount-row">
-          <span>Take quick survey on next page for 20% discount</span>
-          <strong> - $18 </strong>
-      </div>
-
-        <div class="summary-row total">
-          <span>Net first-box price after survey</span>
-          <strong>$71</strong>
         </div>
 
-        <p class="summary-note"> You’ll continue to the quick survey after checkout to unlock 20% off your first box.
+        <div class="summary-row">
+          <span>Shipping</span>
+          <strong>Free</strong>
+        </div>
+
+        <div class="summary-row discount-row">
+          <span>Early access discount</span>
+          <strong>−$18.00</strong>
+        </div>
+
+        <div class="summary-row total">
+          <span>First-box price</span>
+          <strong>$71.00</strong>
+        </div>
+
+        <p class="summary-note">
+          Complete the final 2-minute preference step after checkout to lock in early access pricing.
         </p>
-</div>
+      </div>
+
       <form class="email-form" action="/thanks/">
         <label for="email">Email address</label>
         <input id="email" name="email" type="email" placeholder="you@example.com" required />
@@ -81,12 +89,18 @@
         <label for="note">Flavor preference or note</label>
         <textarea id="note" name="note" rows="3" placeholder="Optional: extra spicy, no strong heat, love Caesar, etc."></textarea>
 
-        <button class="button primary full-width" type="submit">Continue to checkout</button>
+        <label class="intent-check">
+          <input type="checkbox" name="purchase_intent" value="yes" required />
+          <span>I’d like first access when the initial Unkit drop is ready.</span>
+        </label>
+
+        <button class="button primary full-width" type="submit">Continue</button>
       </form>
 
       <p class="microcopy centered">
-        This first-drop box is mixed by default so you can try every flavor. Free shipping included.
+        Next step: confirm your preferences. No payment collected today.
       </p>
+
     </section>
   </main>
 </body>
