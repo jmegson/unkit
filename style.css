@@ -391,34 +391,44 @@ legend {
   font-weight: 800;
   color: var(--green);
 }
-
 .flavor-grid {
+  max-width: 980px;
+  margin: 0 auto 28px;
+  padding: 0 24px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: .8rem;
-  margin: 1rem 0 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
 }
 
 .flavor-card {
   background: var(--paper);
   border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: .9rem;
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 10px 24px rgba(31, 77, 58, 0.08);
+  min-width: 0;
 }
 
 .flavor-card h3 {
-  font-size: .98rem;
-  margin: 0 0 .35rem;
+  margin: 0 0 6px;
   color: var(--green);
+  font-size: 16px;
+  line-height: 1.15;
 }
 
 .flavor-card p {
   margin: 0;
   color: var(--muted);
-  font-size: .9rem;
-  line-height: 1.4;
+  font-size: 15px;
+  line-height: 1.35;
 }
 
+@media (max-width: 760px) {
+  .flavor-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+}
 .order-summary {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
