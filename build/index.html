@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Checkout | Unkit</title>
-  <meta name="description" content="Reserve your first Unkit mixed box." />
+  <meta name="description" content="Reserve your first Unkit box." />
   <link rel="stylesheet" href="/style.css" />
 </head>
 
@@ -36,7 +36,7 @@
         <div class="price">$89</div>
       </div>
 
-      <div class="flavor-grid compact-flavors">
+      <div class="flavor-grid">
         <div class="flavor-card">
           <h3>Smoky Adobo Lime</h3>
           <p>Warm, bright, smoky, and loaded with texture.</p>
@@ -79,93 +79,85 @@
         </p>
       </div>
 
-   <form
-  class="email-form"
-  action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse"
-  method="POST"
-  target="hidden_iframe"
-  onsubmit="submitted=true;"
->
+      <!-- FORM -->
+      <form
+        class="email-form"
+        action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse"
+        method="POST"
+        target="hidden_iframe"
+      >
 
-  <label for="email">Email address</label>
-  <input
-    id="email"
-    name="entry.246314524"
-    type="email"
-    placeholder="you@example.com"
-    required
-  />
+        <label for="email">Email address</label>
+        <input
+          id="email"
+          name="entry.246314524"
+          type="email"
+          placeholder="you@example.com"
+          required
+        />
 
-  <label for="zip">Shipping zip code (for first drop availability)</label>
-  <input
-    id="zip"
-    name="entry.1203724520"
-    type="text"
-    inputmode="numeric"
-    placeholder="03766"
-    required
-  />
+        <label for="zip">Shipping zip code (for first drop availability)</label>
+        <input
+          id="zip"
+          name="entry.1203724520"
+          type="text"
+          inputmode="numeric"
+          placeholder="03766"
+          required
+        />
 
-  <label for="note">Flavor preference or note</label>
-  <textarea
-    id="note"
-    name="entry.153078435"
-    rows="3"
-    placeholder="Optional: extra spicy, no heat, love Caesar, etc."
-  ></textarea>
+        <label for="note">Flavor preference or note</label>
+        <textarea
+          id="note"
+          name="entry.153078435"
+          rows="3"
+          placeholder="Optional: extra spicy, no heat, love Caesar, etc."
+        ></textarea>
 
-  <label class="intent-check">
-    <input
-      type="radio"
-      name="entry.INTENT_ID"
-      value="Yes"
-      required
-    />
-    <span>I’d purchase this at launch</span>
-  </label>
+        <!-- OPTIONAL: only include if you have the ID -->
+        <!--
+        <div class="intent-group">
+          <p class="intent-label">Would you purchase this at launch?</p>
 
-  <label class="intent-check">
-    <input
-      type="radio"
-      name="entry.INTENT_ID"
-      value="Maybe"
-    />
-    <span>Maybe</span>
-  </label>
+          <label class="intent-check">
+            <input type="radio" name="entry.INTENT_ID" value="Yes" required />
+            <span>Yes</span>
+          </label>
 
-  <label class="intent-check">
-    <input
-      type="radio"
-      name="entry.INTENT_ID"
-      value="No"
-    />
-    <span>No</span>
-  </label>
+          <label class="intent-check">
+            <input type="radio" name="entry.INTENT_ID" value="Maybe" />
+            <span>Maybe</span>
+          </label>
 
-  <button class="button primary full-width" type="submit">
-    Continue
-  </button>
-</form>
+          <label class="intent-check">
+            <input type="radio" name="entry.INTENT_ID" value="No" />
+            <span>No</span>
+          </label>
+        </div>
+        -->
 
-<!-- Hidden iframe to prevent redirect to Google -->
-<iframe name="hidden_iframe" style="display:none;"></iframe>
+        <button class="button primary full-width" type="submit">
+          Continue
+        </button>
 
-<script>
-  let submitted = false;
+      </form>
 
-  document.querySelector("form").addEventListener("submit", function () {
-    submitted = true;
-    setTimeout(function () {
-      window.location.href = "/thanks/";
-    }, 500); // slight delay ensures submission completes
-  });
-</script>
+      <iframe name="hidden_iframe" style="display:none;"></iframe>
 
       <p class="microcopy centered">
-        Next step: Secure your early-access discount.
+        Next step: confirm your preferences. No payment collected today.
       </p>
 
     </section>
   </main>
+
+  <script>
+    document.querySelector(".email-form").addEventListener("submit", function () {
+      setTimeout(function () {
+        window.location.href = "/thanks/";
+      }, 800);
+    });
+  </script>
+
 </body>
 </html>
