@@ -79,18 +79,87 @@
         </p>
       </div>
 
-      <form class="email-form" action="/thanks/">
-        <label for="email">Email address</label>
-        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+   <form
+  class="email-form"
+  action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse"
+  method="POST"
+  target="hidden_iframe"
+  onsubmit="submitted=true;"
+>
 
-        <label for="zip">Shipping zip code</label>
-        <input id="zip" name="zip" type="text" inputmode="numeric" placeholder="03766" required />
+  <label for="email">Email address</label>
+  <input
+    id="email"
+    name="entry.246314524"
+    type="email"
+    placeholder="you@example.com"
+    required
+  />
 
-        <label for="note">Flavor preference or note</label>
-        <textarea id="note" name="note" rows="3" placeholder="Optional: extra spicy, no strong heat, love Caesar, etc."></textarea>
+  <label for="zip">Shipping zip code (for first drop availability)</label>
+  <input
+    id="zip"
+    name="entry.1203724520"
+    type="text"
+    inputmode="numeric"
+    placeholder="03766"
+    required
+  />
 
-        <button class="button primary full-width" type="submit">Continue</button>
-      </form>
+  <label for="note">Flavor preference or note</label>
+  <textarea
+    id="note"
+    name="entry.153078435"
+    rows="3"
+    placeholder="Optional: extra spicy, no heat, love Caesar, etc."
+  ></textarea>
+
+  <label class="intent-check">
+    <input
+      type="radio"
+      name="entry.INTENT_ID"
+      value="Yes"
+      required
+    />
+    <span>I’d purchase this at launch</span>
+  </label>
+
+  <label class="intent-check">
+    <input
+      type="radio"
+      name="entry.INTENT_ID"
+      value="Maybe"
+    />
+    <span>Maybe</span>
+  </label>
+
+  <label class="intent-check">
+    <input
+      type="radio"
+      name="entry.INTENT_ID"
+      value="No"
+    />
+    <span>No</span>
+  </label>
+
+  <button class="button primary full-width" type="submit">
+    Continue
+  </button>
+</form>
+
+<!-- Hidden iframe to prevent redirect to Google -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<script>
+  let submitted = false;
+
+  document.querySelector("form").addEventListener("submit", function () {
+    submitted = true;
+    setTimeout(function () {
+      window.location.href = "/thanks/";
+    }, 500); // slight delay ensures submission completes
+  });
+</script>
 
       <p class="microcopy centered">
         Next step: Secure your early-access discount.
