@@ -473,24 +473,6 @@ legend {
     max-width: 520px;
   }
 }
-.order-summary {
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  padding: .75rem 0;
-  margin: 1rem 0;
-}
-
-.order-summary div {
-  display: flex;
-  justify-content: space-between;
-  padding: .35rem 0;
-}
-
-.order-summary .total {
-  font-size: 1.15rem;
-  color: var(--green);
-  font-weight: 800;
-}
 
 textarea {
   width: 100%;
