@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Build your Unkit box</title>
+  <meta name="description" content="Choose the Unkit box you would want in the first drop." />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Unkit home">
+      <span class="logo-mark">u</span>
+      <span class="logo-text">unkit</span>
+    </a>
+    <a class="nav-cta" href="/signup/">Get early access</a>
+  </header>
+
+  <main class="checkout-wrap">
+    <section class="checkout-main">
+      <p class="eyebrow">First-drop builder</p>
+      <h1>Build your first Unkit box.</h1>
+      <p class="hero-subhead">Choose the flavors and size you’d most want. No payment today — this helps us shape the first drop.</p>
+
+      <form class="builder-form" action="/signup/">
+        <fieldset>
+          <legend>Choose your flavor</legend>
+
+          <label class="choice-card">
+            <input type="radio" name="flavor" value="Herby Ranch Crunch" checked />
+            <span>
+              <strong>Herby Ranch Crunch</strong>
+              <small>Cool, creamy, bright, loaded with texture.</small>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="flavor" value="Smoky Adobo Caesar" />
+            <span>
+              <strong>Smoky Adobo Caesar</strong>
+              <small>Smoky, punchy, Caesar-inspired.</small>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="flavor" value="Lemon Parm Everything" />
+            <span>
+              <strong>Lemon Parm Everything</strong>
+              <small>Salty, zippy, cheesy, and bright.</small>
+            </span>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Choose your box size</legend>
+
+          <label class="choice-card price-card">
+            <input type="radio" name="size" value="Starter Box" checked />
+            <span>
+              <strong>Starter Box</strong>
+              <small>4 lunches</small>
+            </span>
+            <b>$24</b>
+          </label>
+
+          <label class="choice-card price-card">
+            <input type="radio" name="size" value="Full Box" />
+            <span>
+              <strong>Full Box</strong>
+              <small>8 lunches</small>
+            </span>
+            <b>$42</b>
+          </label>
+        </fieldset>
+
+        <button class="button primary full-width" type="submit">Continue</button>
+        <p class="microcopy centered">You will not be charged. This is early-access testing.</p>
+      </form>
+    </section>
+
+    <aside class="order-summary">
+      <h2>First-drop preview</h2>
+      <div class="summary-line"><span>Unkit box</span><strong>From $24</strong></div>
+      <div class="summary-line"><span>Lunches</span><strong>4–8</strong></div>
+      <div class="summary-line"><span>Ships</span><strong>Soon</strong></div>
+      <hr />
+      <p>Each box is designed to upgrade fresh greens with dressing, crunch, and flavor boosters.</p>
+    </aside>
+  </main>
+</body>
+</html>
