@@ -159,37 +159,22 @@ h3 {
 }
 
 .bowl-card {
-  min-height: 460px;
-  border-radius: 28px;
-  background: radial-gradient(circle at 50% 35%, #ffffff 0 22%, #e9f5dc 23% 42%, #f8e6ba 43% 100%);
   position: relative;
+  width: min(460px, 100%);
+  aspect-ratio: 1 / 1;
+  border-radius: 28px;
   overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 24px;
+  background: #f6f4ef;
 }
 
 .bowl-image {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
+  position: relative;
+  border-radius: 28px;
   overflow: hidden;
-  border-radius: 16px;
+  background: none;
 }
-
-.leaf, .crunch, .dressing { position: absolute; display: block; }
-.leaf {
-  background: var(--lettuce);
-  border-radius: 80% 20% 80% 20%;
-  transform: rotate(-24deg);
-}
-.leaf-one { width: 170px; height: 78px; top: 75px; left: 55px; }
-.leaf-two { width: 150px; height: 70px; top: 155px; right: 65px; transform: rotate(22deg); }
-.leaf-three { width: 120px; height: 58px; bottom: 88px; left: 120px; transform: rotate(50deg); }
-.crunch { width: 34px; height: 34px; background: #C9813C; border-radius: 10px; }
-.crunch-one { top: 130px; left: 155px; }
-.crunch-two { bottom: 120px; right: 132px; transform: rotate(18deg); }
-.dressing { width: 105px; height: 24px; border-radius: 999px; background: #F7D97E; top: 190px; left: 130px; transform: rotate(-18deg); }
 
 .product-tag {
   position: relative;
@@ -373,5 +358,5 @@ legend {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px;
+  display: block;
 }
