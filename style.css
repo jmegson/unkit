@@ -40,7 +40,9 @@ a { color: inherit; text-decoration: none; }
   width: auto;
   display: block;
 }
-
+.logo img {
+  background: transparent;
+}
 .nav-cta {
   border: 1px solid var(--green);
   border-radius: 999px;
