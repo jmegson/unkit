@@ -3,337 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>You’re early — help shape Unkit</title>
-  <meta name="description" content="You’re early to Unkit. Take the 2-minute survey to help shape the first drop and unlock 20% off." />
+  <title>You’re on the first-drop list | Unkit</title>
+  <meta name="description" content="You’re on the Unkit first-drop list. Complete the final 2-minute step to lock in early access pricing." />
   <link rel="stylesheet" href="/style.css" />
-
-  <style>
-    :root {
-      --green: #1F4D3A;
-      --lettuce: #8FD36A;
-      --cream: #F6F4EF;
-      --paper: #FFFCF5;
-      --ink: #183329;
-      --muted: #65776D;
-      --line: rgba(31, 77, 58, 0.16);
-      --shadow: 0 24px 60px rgba(31, 77, 58, 0.14);
-      --orange: #E9A24A;
-      --orange-soft: #FFF0DA;
-      --purple: #7C5C8D;
-      --purple-soft: #F1E9F5;
-    }
-
-    body {
-      background:
-        radial-gradient(circle at 16% 18%, rgba(143, 211, 106, 0.18), transparent 28%),
-        radial-gradient(circle at 86% 18%, rgba(233, 162, 74, 0.16), transparent 28%),
-        var(--cream);
-      color: var(--ink);
-    }
-
-    .post-checkout-page {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 40px 0 72px;
-    }
-
-    .post-checkout-shell {
-      display: grid;
-      grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .post-hero,
-    .discount-card,
-    .capture-card-mini {
-      background: rgba(255, 252, 245, 0.92);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      border-radius: 28px;
-    }
-
-    .post-hero {
-      padding: clamp(28px, 5vw, 54px);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .post-hero::after {
-      content: "";
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      border-radius: 999px;
-      background: rgba(143, 211, 106, 0.16);
-      right: -80px;
-      bottom: -80px;
-      pointer-events: none;
-    }
-
-    .eyebrow-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-
-    .eyebrow-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      width: fit-content;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--orange-soft);
-      color: var(--green);
-      font-weight: 800;
-      font-size: 0.82rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      border: 1px solid rgba(233, 162, 74, 0.28);
-    }
-
-    .eyebrow-pill.secondary {
-      background: var(--purple-soft);
-      border-color: rgba(124, 92, 141, 0.22);
-      color: var(--purple);
-      text-transform: none;
-      letter-spacing: 0;
-      font-weight: 750;
-    }
-
-    .post-hero h1 {
-      margin: 0;
-      max-width: 760px;
-      font-size: clamp(2.15rem, 5.4vw, 4.9rem);
-      line-height: 0.95;
-      letter-spacing: -0.055em;
-      color: var(--green);
-    }
-
-    .post-hero .lede {
-      margin: 22px 0 0;
-      max-width: 690px;
-      font-size: clamp(1.04rem, 2vw, 1.28rem);
-      line-height: 1.55;
-      color: var(--ink);
-    }
-
-    .reassurance-box {
-      margin-top: 26px;
-      padding: 18px 18px;
-      border: 1px solid rgba(31, 77, 58, 0.14);
-      border-radius: 20px;
-      background: rgba(246, 244, 239, 0.74);
-      max-width: 720px;
-    }
-
-    .reassurance-box strong {
-      display: block;
-      margin-bottom: 6px;
-      color: var(--green);
-      font-size: 1.02rem;
-    }
-
-    .reassurance-box p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    .survey-actions {
-      margin-top: 30px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .button.primary.survey-cta {
-      background: var(--green);
-      color: var(--paper);
-      border-radius: 999px;
-      padding: 16px 24px;
-      font-weight: 850;
-      box-shadow: 0 14px 30px rgba(31, 77, 58, 0.18);
-    }
-
-    .button.secondary.home-cta {
-      border-radius: 999px;
-      padding: 15px 22px;
-      background: rgba(255, 252, 245, 0.72);
-      color: var(--green);
-      border: 1px solid var(--line);
-      font-weight: 800;
-    }
-
-    .cta-note {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    .side-stack {
-      display: grid;
-      gap: 18px;
-    }
-
-    .discount-card {
-      padding: 26px;
-    }
-
-    .discount-card h2,
-    .capture-card-mini h2 {
-      margin: 0;
-      color: var(--green);
-      letter-spacing: -0.03em;
-      font-size: 1.45rem;
-    }
-
-    .discount-card p,
-    .capture-card-mini p {
-      margin: 10px 0 0;
-      color: var(--muted);
-      line-height: 1.48;
-    }
-
-    .price-math {
-      margin-top: 18px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .math-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 16px;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--line);
-      color: var(--ink);
-    }
-
-    .math-row:last-child {
-      border-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .math-row .amount {
-      font-weight: 850;
-      color: var(--green);
-      white-space: nowrap;
-    }
-
-    .math-row.discount .amount {
-      color: var(--purple);
-    }
-
-    .math-row.total {
-      margin-top: 4px;
-      padding: 14px 14px;
-      border-radius: 16px;
-      border: 1px solid rgba(143, 211, 106, 0.34);
-      background: rgba(143, 211, 106, 0.13);
-    }
-
-    .math-row.total .amount {
-      font-size: 1.35rem;
-    }
-
-    .discount-footnote {
-      margin-top: 14px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .value-list {
-      list-style: none;
-      padding: 0;
-      margin: 18px 0 0;
-      display: grid;
-      gap: 11px;
-    }
-
-    .value-list li {
-      display: grid;
-      grid-template-columns: 28px 1fr;
-      gap: 10px;
-      align-items: start;
-      color: var(--ink);
-      line-height: 1.42;
-    }
-
-    .value-list span {
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      display: inline-grid;
-      place-items: center;
-      background: var(--orange-soft);
-      color: var(--green);
-      font-weight: 900;
-      font-size: 0.85rem;
-    }
-
-    .capture-card-mini {
-      padding: 24px;
-      box-shadow: 0 18px 46px rgba(31, 77, 58, 0.1);
-    }
-
-    .email-form.compact {
-      margin-top: 16px;
-      display: grid;
-      gap: 12px;
-    }
-
-    .email-form.compact label {
-      font-weight: 800;
-      color: var(--green);
-      font-size: 0.92rem;
-    }
-
-    .email-form.compact input {
-      width: 100%;
-      box-sizing: border-box;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 13px 14px;
-      background: var(--paper);
-      color: var(--ink);
-      font: inherit;
-    }
-
-    .email-form.compact button {
-      margin-top: 2px;
-      border: 0;
-      cursor: pointer;
-    }
-
-    .microcopy.centered {
-      text-align: center;
-      font-size: 0.84rem;
-      margin-top: 12px;
-    }
-
-    @media (max-width: 860px) {
-      .post-checkout-shell {
-        grid-template-columns: 1fr;
-      }
-
-      .post-checkout-page {
-        padding-top: 22px;
-      }
-
-      .survey-actions .button {
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-      }
-    }
-  </style>
 </head>
+
 <body>
   <header class="site-header">
     <a class="brand" href="/" aria-label="Unkit home">
@@ -343,75 +17,103 @@
 
   <main class="post-checkout-page">
     <div class="post-checkout-shell">
+
       <section class="post-hero" aria-labelledby="post-checkout-title">
         <div class="eyebrow-row">
-          <p class="eyebrow-pill">Pre-Launch VIP</p>
-          <p class="eyebrow-pill secondary">First drop coming soon</p>
+          <p class="eyebrow-pill">First-drop list</p>
+          <p class="eyebrow-pill secondary">Final step</p>
         </div>
 
-        <h1 id="post-checkout-title">You’re a step ahead.</h1>
+        <h1 id="post-checkout-title">You’re in early.</h1>
 
         <p class="lede">
-          You're here before we’ve even launched! That means you get first dibs once we're live, and a chance to help us shape our first shipment.
+          You’re on the Unkit first-drop list. We’re finalizing the first run now, and you’ll get first access before we open publicly.
         </p>
 
         <div class="reassurance-box">
-          <strong>Just to be clear: no order was placed.</strong>
+          <strong>Complete the final 2-minute step to lock in your pricing.</strong>
           <p>
-            You’re on the first-drop list — we’ll reach out as soon as the initial run is ready. For now, you’ve got early access and first look at what we’re launching.
+            Tell us your flavor preferences so we can match the first drop to what people actually want in their boxes.
           </p>
         </div>
 
         <div class="survey-actions">
-          <a class="button primary survey-cta" href="https://g9q1rconr5t.typeform.com/to/cTQdgtQg">Secure your 20% off discount</a>
-          <a class="button secondary home-cta" href="/">Back to homepage</a>
+          <a class="button primary survey-cta" href="https://g9q1rconr5t.typeform.com/to/cTQdgtQg">
+            Lock in your first-box pricing
+          </a>
+          <a class="button secondary home-cta" href="/">
+            Back to homepage
+          </a>
         </div>
-        <p class="cta-note">Complete the 2‑minute survey to lock in your 20% early-access discount.</p>
+
+        <p class="cta-note">
+          Takes about 2 minutes. Your 20% early access discount is reserved once complete.
+        </p>
       </section>
 
-      <aside class="side-stack" aria-label="Survey incentive and signup">
+      <aside class="side-stack" aria-label="Early access details">
+
         <section class="discount-card">
-          <h2>Early access pricing</h2>
-          <p>Reserved for you and other pre-launch VIPs — unlocked when you complete the survey.</p>
+          <h2>Your early access price</h2>
+          <p>Complete the final preference step to reserve this first-box pricing.</p>
 
           <div class="price-math" aria-label="Discount preview">
             <div class="math-row">
               <span>Mixed box of 8 kits</span>
               <span class="amount">$89.00</span>
             </div>
+
             <div class="math-row">
               <span>Shipping</span>
               <span class="amount">Free</span>
             </div>
+
             <div class="math-row discount">
-              <span>Survey discount (20%)</span>
-              <span class="amount">−$18</span>
+              <span>Early access discount</span>
+              <span class="amount">−$18.00</span>
             </div>
+
             <div class="math-row total">
-              <span>Your price</span>
-              <span class="amount">$71</span>
+              <span>First-box price</span>
+              <span class="amount">$71.00</span>
             </div>
           </div>
 
-          <p class="discount-footnote">Finish the survey to secure this pricing for the first drop.</p>
+          <p class="discount-footnote">
+            Reserved after you complete the final 2-minute preference step.
+          </p>
         </section>
 
         <section class="discount-card">
-          <h2>Your survey answers help decide</h2>
+          <h2>What happens next</h2>
+
           <ul class="value-list">
-            <li><span>1</span><div>Which flavors make the first box.</div></li>
-            <li><span>2</span><div>Whether people want a mixed box, flavor choice, or both.</div></li>
-            <li><span>3</span><div>How we balance convenience, inclusion elaborate-ness, and price.</div></li>
+            <li>
+              <span>1</span>
+              <div>Complete the quick preference step.</div>
+            </li>
+            <li>
+              <span>2</span>
+              <div>We finalize the first Unkit drop.</div>
+            </li>
+            <li>
+              <span>3</span>
+              <div>You get first access before public launch.</div>
+            </li>
           </ul>
         </section>
 
         <section class="capture-card-mini">
-          <h2>Follow along as we build Unkit</h2>
-          <p>We’re sharing early product, flavors, and behind-the-scenes as we get ready for the first drop.</p>
+          <h2>Follow along</h2>
+          <p>
+            We’re sharing early flavors, behind-the-scenes updates, and first-drop details as we build.
+          </p>
 
-          <a class="button primary full-width" href="https://instagram.com/unkitbox" target="_blank">Follow on Instagram</a>
-
+          <a class="button primary full-width" href="https://instagram.com/unkitbox" target="_blank" rel="noopener">
+            Follow on Instagram
+          </a>
         </section>
+
       </aside>
     </div>
   </main>
