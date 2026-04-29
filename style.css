@@ -351,3 +351,123 @@ legend {
   object-fit: cover;
    object-position: center 65%;
 }
+.checkout-page {
+  background:
+    radial-gradient(circle at top left, rgba(213, 128, 73, 0.12), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(126, 88, 148, 0.10), transparent 30%),
+    var(--cream);
+}
+
+.checkout-card {
+  max-width: 760px;
+}
+
+.lede {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.checkout-highlight {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background: #fff8ed;
+  border: 1px solid rgba(213, 128, 73, 0.25);
+  border-radius: 22px;
+  padding: 1rem 1.1rem;
+  margin: 1.25rem 0;
+}
+
+.checkout-highlight span {
+  display: block;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--green);
+}
+
+.flavor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .8rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.flavor-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: .9rem;
+}
+
+.flavor-card h3 {
+  font-size: .98rem;
+  margin: 0 0 .35rem;
+  color: var(--green);
+}
+
+.flavor-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.4;
+}
+
+.order-summary {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: .75rem 0;
+  margin: 1rem 0;
+}
+
+.order-summary div {
+  display: flex;
+  justify-content: space-between;
+  padding: .35rem 0;
+}
+
+.order-summary .total {
+  font-size: 1.15rem;
+  color: var(--green);
+  font-weight: 800;
+}
+
+.discount-preview {
+  background: rgba(126, 88, 148, 0.10);
+  border: 1px solid rgba(126, 88, 148, 0.22);
+  border-radius: 18px;
+  padding: .9rem 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.discount-preview span {
+  display: block;
+  margin-top: .25rem;
+  color: var(--muted);
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: .85rem;
+  font: inherit;
+  background: var(--paper);
+  color: var(--ink);
+  resize: vertical;
+}
+
+@media (max-width: 720px) {
+  .flavor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-highlight {
+    align-items: flex-start;
+  }
