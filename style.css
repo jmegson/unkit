@@ -32,24 +32,13 @@ a { color: inherit; text-decoration: none; }
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 850;
-  letter-spacing: -0.04em;
-  color: var(--green);
-  font-size: 1.5rem;
+  text-decoration: none;
 }
 
-.logo-mark {
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  background: var(--green);
-  color: var(--cream);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  line-height: 1;
+.brand-logo {
+  height: 84px;
+  width: auto;
+  display: block;
 }
 
 .nav-cta {
@@ -351,6 +340,7 @@ legend {
   .hero { margin-top: 18px; }
   .hero-card { padding: 16px; }
   .bowl-card { min-height: 340px; }
+  .brand-logo { height: 64px;}
   .split-section { padding: 28px; }
   footer { flex-direction: column; gap: 8px; }
   .order-summary { position: static; }
