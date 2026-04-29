@@ -493,3 +493,36 @@ textarea {
   .checkout-highlight {
     align-items: flex-start;
   }
+.checkout-step {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 14px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(143, 211, 106, 0.16);
+  color: var(--green);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.compact-flavors {
+  margin-top: 22px;
+}
+
+.intent-check {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 10px;
+  align-items: start;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(246, 244, 239, 0.55);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.intent-check input {
+  margin-top: 3px;
+}
