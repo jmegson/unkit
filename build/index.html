@@ -4,88 +4,77 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Build your Unkit box</title>
-  <meta name="description" content="Choose the Unkit box you would want in the first drop." />
+  <meta name="description" content="Build your first Unkit mixed box." />
   <link rel="stylesheet" href="/style.css" />
 </head>
+
 <body>
   <header class="site-header">
     <a class="brand" href="/" aria-label="Unkit home">
-      <span class="logo-mark">u</span>
-      <span class="logo-text">unkit</span>
+      <img src="/images/unkit-logo-full.png" alt="Unkit" class="brand-logo">
     </a>
-    <a class="nav-cta" href="/signup/">Get early access</a>
   </header>
 
-  <main class="checkout-wrap">
-    <section class="checkout-main">
-      <p class="eyebrow">First-drop builder</p>
-      <h1>Build your first Unkit box.</h1>
-      <p class="hero-subhead">Choose the flavors and size you’d most want. No payment today — this helps us shape the first drop.</p>
+  <main class="simple-page checkout-page">
+    <section class="capture-card checkout-card">
+      <p class="eyebrow">First drop checkout</p>
+      <h1>Your mixed Unkit box</h1>
+      <p class="lede">
+        Chef-curated salad upgrades made with craveable crunch, bold dressings, and pantry-quality toppings.
+        Just add your greens and protein.
+      </p>
 
-      <form class="builder-form" action="/signup/">
-        <fieldset>
-          <legend>Choose your flavor</legend>
+      <div class="checkout-highlight">
+        <div>
+          <strong>Mixed box of 8 kits</strong>
+          <span>Includes all 3 launch flavors</span>
+        </div>
+        <div class="price">$89</div>
+      </div>
 
-          <label class="choice-card">
-            <input type="radio" name="flavor" value="Herby Ranch Crunch" checked />
-            <span>
-              <strong>Herby Ranch Crunch</strong>
-              <small>Cool, creamy, bright, loaded with texture.</small>
-            </span>
-          </label>
+      <div class="flavor-grid">
+        <div class="flavor-card">
+          <h3>Smoky Adobo Lime</h3>
+          <p>Warm, comforting, bright, and loaded with texture.</p>
+        </div>
+        <div class="flavor-card">
+          <h3>Spicy Caesar Crunch</h3>
+          <p>Big flavor, smoky heat, Caesar-ish comfort.</p>
+        </div>
+        <div class="flavor-card">
+          <h3>Basily Lemon Parm</h3>
+          <p>Salty, zippy, cheesy, and pantry-perfect.</p>
+        </div>
+      </div>
 
-          <label class="choice-card">
-            <input type="radio" name="flavor" value="Smoky Adobo Caesar" />
-            <span>
-              <strong>Smoky Adobo Caesar</strong>
-              <small>Smoky, punchy, Caesar-inspired.</small>
-            </span>
-          </label>
+      <div class="order-summary">
+        <div><span>Mixed box · 8 kits</span><strong>$89.00</strong></div>
+        <div><span>Shipping</span><strong>Free</strong></div>
+        <div class="total"><span>Total today</span><strong>$89.00</strong></div>
+      </div>
 
-          <label class="choice-card">
-            <input type="radio" name="flavor" value="Lemon Parm Everything" />
-            <span>
-              <strong>Lemon Parm Everything</strong>
-              <small>Salty, zippy, cheesy, and bright.</small>
-            </span>
-          </label>
-        </fieldset>
+      <div class="discount-preview">
+        <strong>Complete the quick survey after checkout and get 20% off your first box.</strong>
+        <span>$89 → $71.20 after discount. You save $17.80.</span>
+      </div>
 
-        <fieldset>
-          <legend>Choose your box size</legend>
+      <form class="email-form" action="/thanks/">
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required />
 
-          <label class="choice-card price-card">
-            <input type="radio" name="size" value="Starter Box" checked />
-            <span>
-              <strong>Starter Box</strong>
-              <small>4 lunches</small>
-            </span>
-            <b>$24</b>
-          </label>
+        <label for="zip">Shipping zip code</label>
+        <input id="zip" name="zip" type="text" inputmode="numeric" placeholder="03766" required />
 
-          <label class="choice-card price-card">
-            <input type="radio" name="size" value="Full Box" />
-            <span>
-              <strong>Full Box</strong>
-              <small>8 lunches</small>
-            </span>
-            <b>$42</b>
-          </label>
-        </fieldset>
+        <label for="note">Flavor preference or note</label>
+        <textarea id="note" name="note" rows="3" placeholder="Optional: extra spicy, no strong heat, love Caesar, etc."></textarea>
 
-        <button class="button primary full-width" type="submit">Continue</button>
-        <p class="microcopy centered">You will not be charged. This is early-access testing.</p>
+        <button class="button primary full-width" type="submit">Continue to checkout · $89</button>
       </form>
-    </section>
 
-    <aside class="order-summary">
-      <h2>First-drop preview</h2>
-      <div class="summary-line"><span>Unkit box</span><strong>From $24</strong></div>
-      <div class="summary-line"><span>Lunches</span><strong>4–8</strong></div>
-      <div class="summary-line"><span>Ships</span><strong>Soon</strong></div>
-      <hr />
-      <p>Each box is designed to upgrade fresh greens with dressing, crunch, and flavor boosters.</p>
-    </aside>
+      <p class="microcopy centered">
+        This first-drop box is mixed by default so you can try every flavor. Free shipping included.
+      </p>
+    </section>
   </main>
 </body>
 </html>
