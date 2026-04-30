@@ -21,10 +21,12 @@ body {
 a { color: inherit; text-decoration: none; }
 
 .site-header {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 32px 6vw;
 }
 
 .brand {
@@ -35,7 +37,7 @@ a { color: inherit; text-decoration: none; }
 
 .brand-logo {
   display: block;
-  width: 140px;
+  width: 160px;
   height: auto;
   max-width: none;
 }
@@ -377,7 +379,7 @@ legend {
 
 @media (max-width: 700px) {
   .brand-logo {
-    width: 110px;
+    width: 120px;
     height: auto;
   }
 
