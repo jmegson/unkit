@@ -340,3 +340,23 @@ footer {
 .flavor-inner {
   text-align: center;
 }
+.footer-center {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-button {
+  background: transparent;
+  border: 1px solid var(--green);
+  color: var(--green);
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: 750;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+.footer-button:hover {
+  background: var(--green);
+  color: var(--cream);
+}
