@@ -563,7 +563,19 @@ textarea {
   color: var(--ink);
   resize: vertical;
 }
+@media (max-width: 700px) {
+  .flavor-section {
+    padding: 48px 18px;
+  }
 
+  .section-heading {
+    margin-bottom: 32px;
+  }
+
+  .flavor-grid {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 720px) {
   .flavor-grid {
     grid-template-columns: 1fr;
