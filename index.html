@@ -8,12 +8,16 @@
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="/" aria-label="Unkit home">
-        <img src="/images/unkit-logo-full.png" alt="Unkit" class="brand-logo">
-    </a>
-    <a class="nav-cta" href="/build/">Get your box</a>
-  </header>
+     <header class="site-header">
+        <a class="brand" href="/" aria-label="Unkit home">
+          <img src="/images/unkit-logo-full.png" alt="Unkit" class="brand-logo">
+        </a>
+
+      <div class="nav-right">
+        <a class="nav-link" href="/about/">About</a>
+        <a class="nav-cta" href="/build/">Get your box</a>
+      </div>
+    </header>
 
   <main>
     <section class="hero">
@@ -58,7 +62,11 @@
       </div>
       <p>Unkit is for people who love food — who buy the good greens, want nutritious meals, and still need lunch to be easy, satisfying, and actually delicious.</p>
     </section>
-
+    
+        <p style="margin-top:16px;">
+        <a href="/about/" class="text-link">Why we built this →</a>
+      </p>
+          
     <section class="flavor-section">
       <div class="section-heading">
         <p class="eyebrow">First-drop flavor sampler</p>
@@ -106,7 +114,9 @@
 
   <footer>
     <span>© Unkit</span>
-    <span>Level up your lettuce.</span>
+    <span>
+      <a href="/about/">About</a> · Level up your lettuce.
+    </span>
   </footer>
 </body>
 </html>
