@@ -13,134 +13,171 @@
     <a class="brand" href="/" aria-label="Unkit home">
       <img src="/images/unkit-logo-full.png" alt="Unkit" class="brand-logo">
     </a>
+
+    <nav class="nav-right">
+      <a class="nav-link" href="/about/">About</a>
+      <a class="nav-cta" href="/">Home</a>
+    </nav>
   </header>
 
-  <main class="simple-page checkout-page">
-    <section class="capture-card checkout-card">
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">First drop reservation</p>
 
-      <div class="checkout-step">Checkout · Step 1 of 2</div>
+        <h1>Your first Unkit box</h1>
 
-      <p class="eyebrow">First drop reservation</p>
+        <p class="hero-subhead">
+          9 chef-curated salad upgrade kits. Just add your greens and protein.
+        </p>
 
-      <h1>Your first Unkit box</h1>
+        <div class="cta-row">
+          <a class="button secondary" href="#reserve">Reserve your box</a>
+        </div>
+      </div>
 
-      <p class="lede">
-        9 chef-curated salad upgrade kits. Just add your greens and protein.
+      <div class="hero-card">
+        <div class="bowl-card">
+          <div class="bowl-image">
+            <img src="/images/lemony.png" alt="Lemony Basil Parm salad" class="product-image">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="split-section" id="reserve">
+      <div>
+        <p class="eyebrow">Mixed box</p>
+        <h2>9 kits. 3 flavors. Free shipping.</h2>
+      </div>
+
+      <p>
+        Your first box includes Smoky Adobo Lime, Spicy Caesar Crunch, and Lemony Basil Parm.
+        Complete the 2-minute survey on the next page to lock in early access pricing:
+        $89 minus 20%, bringing your first-box price to $71.
       </p>
+    </section>
 
-      <div class="checkout-highlight">
-        <div>
-          <strong>Mixed box of 9 kits</strong>
-          <span>Includes all 3 flavors</span>
+    <section class="flavor-section">
+      <div class="flavor-inner">
+        <div class="section-heading">
+          <p class="eyebrow">Included flavors</p>
+          <h2>Built to make lunch feel done.</h2>
         </div>
-        <div class="price">$89</div>
+
+        <div class="flavor-grid">
+          <article class="flavor-card">
+            <div class="flavor-image">
+              <img src="/images/adobo.png" alt="Smoky Adobo Lime salad">
+              <div class="flavor-tag">
+                <h3>Smoky Adobo Lime</h3>
+                <p>Warm, bright, smoky, and loaded with texture.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flavor-card">
+            <div class="flavor-image">
+              <img src="/images/ceasar.png" alt="Spicy Caesar Crunch salad">
+              <div class="flavor-tag">
+                <h3>Spicy Caesar Crunch</h3>
+                <p>Bold, creamy, savory, with a little heat.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flavor-card">
+            <div class="flavor-image">
+              <img src="/images/lemony.png" alt="Lemony Basil Parm salad">
+              <div class="flavor-tag">
+                <h3>Lemony Basil Parm</h3>
+                <p>Zippy, salty, fresh, and pantry-perfect.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="split-section">
+      <div>
+        <p class="eyebrow">Order summary</p>
+        <h2>First-box price: $71</h2>
       </div>
 
-       <div class="flavor-card">
-          <div class="flavor-image">
-          <img src="/images/adobo.png" alt="Smoky Adobo Lime salad">
-          <div class="flavor-tag">
-            <h3>Smoky Adobo Lime</h3>
-            <p>Warm, bright, smoky, and loaded with texture.</p>
-          </div>
-        </div>
-      </div>
+      <p>
+        Mixed box · 9 kits: $89<br>
+        Shipping: Free<br>
+        Early access survey discount: −$18<br>
+        <strong>Total after survey: $71</strong>
+      </p>
+    </section>
 
-        <div class="flavor-card">
-        <div class="flavor-image">
-          <img src="/images/ceasar.png" alt="Spicy Caesar Crunch Salad">
-            <div class="flavor-tag">
-              <h3>Spicy Caesar Crunch</h3>
-          <p>Bold, creamy, savory, with a little heat.</p>
-          </div>
-        </div>
-        </div>
-    
-      <div class="flavor-card">
-        <div class="flavor-image">
-          <img src="/images/lemony.png" alt="Lemony Basil Parm Salad">
-            <div class="flavor-tag">
-              <h3>Lemony Basil Parm</h3>
-          <p>Zippy, salty, fresh, and pantry-perfect.</p>
-          </div>
-        </div>
+    <section class="flavor-section">
+      <div class="flavor-inner">
+        <div class="section-heading">
+          <p class="eyebrow">Reserve your box</p>
+          <h2>Be first in line for the first drop.</h2>
         </div>
 
-      <div class="order-summary">
-        <div class="summary-row">
-          <span>Mixed box · 9 kits</span>
-          <strong>$89.00</strong>
-        </div>
+        <form
+          class="email-form"
+          action="https://docs.google.com/forms/d/1g7FfUKQskQSzwh98yITPn-wx_uLFiZjg5kCd4B5UAe0/formResponse"
+          method="POST"
+          target="hidden_iframe"
+          style="max-width: 520px; margin: 0 auto; text-align: left;"
+        >
+          <label for="email" style="display:block; margin-bottom:8px; font-weight:850; color:#1F4D3A;">Email address</label>
+          <input
+            id="email"
+            name="entry.246314524"
+            type="email"
+            placeholder="you@example.com"
+            required
+            style="width:100%; margin-bottom:16px; padding:14px 16px; border-radius:16px; border:1px solid rgba(31,77,58,.18); background:#FFFCF5; font-size:1rem;"
+          />
 
-        <div class="summary-row">
-          <span>Shipping</span>
-          <strong>Free</strong>
-        </div>
+          <label for="zip" style="display:block; margin-bottom:8px; font-weight:850; color:#1F4D3A;">Shipping zip code</label>
+          <input
+            id="zip"
+            name="entry.1203724520"
+            type="text"
+            inputmode="numeric"
+            placeholder="03766"
+            required
+            style="width:100%; margin-bottom:16px; padding:14px 16px; border-radius:16px; border:1px solid rgba(31,77,58,.18); background:#FFFCF5; font-size:1rem;"
+          />
 
-        <div class="summary-row discount-row">
-          <span>Early access discount</span>
-          <strong>−$18.00</strong>
-        </div>
+          <label for="note" style="display:block; margin-bottom:8px; font-weight:850; color:#1F4D3A;">Flavor preference or note</label>
+          <textarea
+            id="note"
+            name="entry.153078435"
+            rows="3"
+            placeholder="Optional: extra spicy, no heat, love Caesar, etc."
+            style="width:100%; margin-bottom:18px; padding:14px 16px; border-radius:16px; border:1px solid rgba(31,77,58,.18); background:#FFFCF5; font-size:1rem; font-family:inherit;"
+          ></textarea>
 
-        <div class="summary-row total">
-          <span>First-box price</span>
-          <strong>$71.00</strong>
-        </div>
+          <button class="button primary" type="submit" style="width:100%;">
+            Continue to lock in discount
+          </button>
+        </form>
 
-        <p class="summary-note">
-          Complete the 2-minute survey on the next page to lock in early access pricing.
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+        <p style="margin-top:16px; color:#65776D;">
+          Next step: complete the quick survey to secure early access pricing.
         </p>
       </div>
-
-      <!-- FORM -->
-      <form
-        class="email-form"
-        action="https://docs.google.com/forms/d/1g7FfUKQskQSzwh98yITPn-wx_uLFiZjg5kCd4B5UAe0/formResponse"
-        method="POST"
-        target="hidden_iframe"
-      >
-
-        <label for="email">Email address</label>
-        <input
-          id="email"
-          name="entry.246314524"
-          type="email"
-          placeholder="you@example.com"
-          required
-        />
-
-        <label for="zip">Shipping zip code (for first drop availability)</label>
-        <input
-          id="zip"
-          name="entry.1203724520"
-          type="text"
-          inputmode="numeric"
-          placeholder="03766"
-          required
-        />
-
-        <label for="note">Flavor preference or note</label>
-        <textarea
-          id="note"
-          name="entry.153078435"
-          rows="3"
-          placeholder="Optional: extra spicy, no heat, love Caesar, etc."
-        ></textarea>
-
-        <button class="button primary full-width" type="submit">
-          Continue
-        </button>
-
-      </form>
-
-      <iframe name="hidden_iframe" style="display:none;"></iframe>
-
-      <p class="microcopy centered">
-        Next step: lock in your discount pricing
-      </p>
-
     </section>
   </main>
+
+  <footer class="site-footer">
+    <span>© Unkit</span>
+
+    <a href="/about/" class="footer-button">Why we built this</a>
+
+    <span>Level up your lettuce.</span>
+  </footer>
 
   <script>
     document.querySelector(".email-form").addEventListener("submit", function () {
@@ -149,6 +186,5 @@
       }, 800);
     });
   </script>
-
 </body>
 </html>
