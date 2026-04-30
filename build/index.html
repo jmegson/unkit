@@ -6,6 +6,237 @@
   <title>Checkout | Unkit</title>
   <meta name="description" content="Reserve your first Unkit box." />
   <link rel="stylesheet" href="/style.css" />
+
+  <style>
+    .checkout-page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 24px auto 72px;
+    }
+
+    .checkout-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .checkout-card,
+    .summary-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      box-shadow: 0 12px 32px rgba(31, 77, 58, 0.07);
+    }
+
+    .checkout-card {
+      padding: clamp(24px, 4vw, 42px);
+    }
+
+    .summary-card {
+      padding: 24px;
+      position: sticky;
+      top: 24px;
+    }
+
+    .checkout-step {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #E7F6DA;
+      color: var(--green);
+      font-weight: 850;
+      font-size: 0.9rem;
+    }
+
+    .checkout-card h1 {
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      margin-bottom: 18px;
+    }
+
+    .lede {
+      color: #36584A;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      max-width: 620px;
+      margin-bottom: 26px;
+    }
+
+    .checkout-highlight {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      background: #E7F6DA;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 18px;
+      margin-bottom: 28px;
+    }
+
+    .checkout-highlight strong {
+      display: block;
+      color: var(--green);
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+    }
+
+    .checkout-highlight span {
+      color: #48685A;
+    }
+
+    .price {
+      color: var(--green);
+      font-weight: 900;
+      font-size: 2rem;
+      letter-spacing: -0.04em;
+    }
+
+    .mini-flavor-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .mini-flavor {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      background: var(--paper);
+    }
+
+    .mini-flavor img {
+      width: 100%;
+      height: 150px;
+      display: block;
+      object-fit: cover;
+    }
+
+    .mini-flavor div {
+      padding: 12px;
+    }
+
+    .mini-flavor h3 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .mini-flavor p {
+      color: #48685A;
+      font-size: 0.9rem;
+      line-height: 1.35;
+      margin-bottom: 0;
+    }
+
+    .email-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .email-form label {
+      color: var(--green);
+      font-weight: 850;
+      margin-bottom: -6px;
+    }
+
+    .email-form input,
+    .email-form textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #fffefa;
+      color: var(--ink);
+      border-radius: 16px;
+      padding: 14px 16px;
+      font: inherit;
+      font-size: 1rem;
+    }
+
+    .email-form textarea {
+      resize: vertical;
+      min-height: 96px;
+    }
+
+    .full-width {
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    .microcopy {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin: 14px 0 0;
+      text-align: center;
+    }
+
+    .summary-title {
+      margin-bottom: 18px;
+    }
+
+    .summary-title h2 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .summary-title p {
+      color: #48685A;
+      line-height: 1.45;
+      margin-bottom: 0;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      color: #48685A;
+    }
+
+    .summary-row strong {
+      color: var(--green);
+      white-space: nowrap;
+    }
+
+    .discount-row span,
+    .discount-row strong {
+      color: #9B5A1A;
+    }
+
+    .summary-row.total {
+      font-size: 1.2rem;
+      color: var(--green);
+      border-top: 2px solid var(--green);
+    }
+
+    .summary-note {
+      margin: 18px 0 0;
+      padding: 14px;
+      border-radius: 18px;
+      background: #E7F6DA;
+      color: #36584A;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 860px) {
+      .checkout-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-card {
+        position: static;
+      }
+
+      .mini-flavor-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mini-flavor img {
+        height: 220px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -20,104 +251,52 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
+  <main class="checkout-page">
+    <div class="checkout-shell">
+
+      <section class="checkout-card">
+        <div class="checkout-step">Checkout · Step 1 of 2</div>
+
         <p class="eyebrow">First drop reservation</p>
 
         <h1>Your first Unkit box</h1>
 
-        <p class="hero-subhead">
+        <p class="lede">
           9 chef-curated salad upgrade kits. Just add your greens and protein.
         </p>
 
-        <div class="cta-row">
-          <a class="button secondary" href="#reserve">Reserve your box</a>
-        </div>
-      </div>
-
-      <div class="hero-card">
-        <div class="bowl-card">
-          <div class="bowl-image">
-            <img src="/images/lemony.png" alt="Lemony Basil Parm salad" class="product-image">
+        <div class="checkout-highlight">
+          <div>
+            <strong>Mixed box of 9 kits</strong>
+            <span>Includes all 3 first-drop flavors</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="split-section" id="reserve">
-      <div>
-        <p class="eyebrow">Mixed box</p>
-        <h2>9 kits. 3 flavors. Free shipping.</h2>
-      </div>
-
-      <p>
-        Your first box includes Smoky Adobo Lime, Spicy Caesar Crunch, and Lemony Basil Parm.
-        Complete the 2-minute survey on the next page to lock in early access pricing:
-        $89 minus 20%, bringing your first-box price to $71.
-      </p>
-    </section>
-
-    <section class="flavor-section">
-      <div class="flavor-inner">
-        <div class="section-heading">
-          <p class="eyebrow">Included flavors</p>
-          <h2>Built to make lunch feel done.</h2>
+          <div class="price">$89</div>
         </div>
 
-        <div class="flavor-grid">
-          <article class="flavor-card">
-            <div class="flavor-image">
-              <img src="/images/adobo.png" alt="Smoky Adobo Lime salad">
-              <div class="flavor-tag">
-                <h3>Smoky Adobo Lime</h3>
-                <p>Warm, bright, smoky, and loaded with texture.</p>
-              </div>
+        <div class="mini-flavor-grid">
+          <article class="mini-flavor">
+            <img src="/images/adobo.png" alt="Smoky Adobo Lime salad">
+            <div>
+              <h3>Smoky Adobo Lime</h3>
+              <p>Warm, bright, smoky, and loaded with texture.</p>
             </div>
           </article>
 
-          <article class="flavor-card">
-            <div class="flavor-image">
-              <img src="/images/ceasar.png" alt="Spicy Caesar Crunch salad">
-              <div class="flavor-tag">
-                <h3>Spicy Caesar Crunch</h3>
-                <p>Bold, creamy, savory, with a little heat.</p>
-              </div>
+          <article class="mini-flavor">
+            <img src="/images/ceasar.png" alt="Spicy Caesar Crunch salad">
+            <div>
+              <h3>Spicy Caesar Crunch</h3>
+              <p>Bold, creamy, savory, with a little heat.</p>
             </div>
           </article>
 
-          <article class="flavor-card">
-            <div class="flavor-image">
-              <img src="/images/lemony.png" alt="Lemony Basil Parm salad">
-              <div class="flavor-tag">
-                <h3>Lemony Basil Parm</h3>
-                <p>Zippy, salty, fresh, and pantry-perfect.</p>
-              </div>
+          <article class="mini-flavor">
+            <img src="/images/lemony.png" alt="Lemony Basil Parm salad">
+            <div>
+              <h3>Lemony Basil Parm</h3>
+              <p>Zippy, salty, fresh, and pantry-perfect.</p>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="split-section">
-      <div>
-        <p class="eyebrow">Order summary</p>
-        <h2>First-box price: $71</h2>
-      </div>
-
-      <p>
-        Mixed box · 9 kits: $89<br>
-        Shipping: Free<br>
-        Early access survey discount: −$18<br>
-        <strong>Total after survey: $71</strong>
-      </p>
-    </section>
-
-    <section class="flavor-section">
-      <div class="flavor-inner">
-        <div class="section-heading">
-          <p class="eyebrow">Reserve your box</p>
-          <h2>Be first in line for the first drop.</h2>
         </div>
 
         <form
@@ -125,19 +304,17 @@
           action="https://docs.google.com/forms/d/1g7FfUKQskQSzwh98yITPn-wx_uLFiZjg5kCd4B5UAe0/formResponse"
           method="POST"
           target="hidden_iframe"
-          style="max-width: 520px; margin: 0 auto; text-align: left;"
         >
-          <label for="email" style="display:block; margin-bottom:8px; font-weight:850; color:#1F4D3A;">Email address</label>
+          <label for="email">Email address</label>
           <input
             id="email"
             name="entry.246314524"
             type="email"
             placeholder="you@example.com"
             required
-            style="width:100%; margin-bottom:16px; padding:14px 16px; border-radius:16px; border:1px solid rgba(31,77,58,.18); background:#FFFCF5; font-size:1rem;"
           />
 
-          <label for="zip" style="display:block; margin-bottom:8px; font-weight:850; color:#1F4D3A;">Shipping zip code</label>
+          <label for="zip">Shipping zip code</label>
           <input
             id="zip"
             name="entry.1203724520"
@@ -145,37 +322,68 @@
             inputmode="numeric"
             placeholder="03766"
             required
-            style="width:100%; margin-bottom:16px; padding:14px 16px; border-radius:16px; border:1px solid rgba(31,77,58,.18); background:#FFFCF5; font-size:1rem;"
           />
 
-          <label for="note" style="display:block; margin-bottom:8px; font-weight:850; color:#1F4D3A;">Flavor preference or note</label>
+          <label for="note">Flavor preference or note</label>
           <textarea
             id="note"
             name="entry.153078435"
             rows="3"
             placeholder="Optional: extra spicy, no heat, love Caesar, etc."
-            style="width:100%; margin-bottom:18px; padding:14px 16px; border-radius:16px; border:1px solid rgba(31,77,58,.18); background:#FFFCF5; font-size:1rem; font-family:inherit;"
           ></textarea>
 
-          <button class="button primary" type="submit" style="width:100%;">
-            Continue to lock in discount
+          <button class="button primary full-width" type="submit">
+            Continue
           </button>
         </form>
 
         <iframe name="hidden_iframe" style="display:none;"></iframe>
 
-        <p style="margin-top:16px; color:#65776D;">
-          Next step: complete the quick survey to secure early access pricing.
+        <p class="microcopy">
+          Next step: complete the quick survey to lock in early access pricing.
         </p>
-      </div>
-    </section>
+      </section>
+
+      <aside class="summary-card">
+        <div class="summary-title">
+          <p class="eyebrow">Order summary</p>
+          <h2>Early access pricing</h2>
+          <p>
+            Complete the 2-minute survey on the next page to lock in your first-drop discount.
+          </p>
+        </div>
+
+        <div class="summary-row">
+          <span>Mixed box · 9 kits</span>
+          <strong>$89.00</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Shipping</span>
+          <strong>Free</strong>
+        </div>
+
+        <div class="summary-row discount-row">
+          <span>Survey discount</span>
+          <strong>−$18.00</strong>
+        </div>
+
+        <div class="summary-row total">
+          <span>First-box price</span>
+          <strong>$71.00</strong>
+        </div>
+
+        <p class="summary-note">
+          You’re a step ahead. This early access price is only available to our first signups who complete the survey after checkout.
+        </p>
+      </aside>
+
+    </div>
   </main>
 
   <footer class="site-footer">
     <span>© Unkit</span>
-
     <a href="/about/" class="footer-button">Why we built this</a>
-
     <span>Level up your lettuce.</span>
   </footer>
 
