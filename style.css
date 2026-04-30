@@ -695,3 +695,25 @@ textarea {
     padding: 28px;
   }
 }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-link {
+  color: var(--green);
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+.text-link {
+  color: var(--green);
+  font-weight: 700;
+  text-decoration: underline;
+}
