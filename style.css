@@ -39,7 +39,7 @@ a { color: inherit; text-decoration: none; }
   height: auto;
   max-width: none;
 }
-.logo img {
+.brand-logo {
   background: transparent;
 }
 .nav-cta {
@@ -577,6 +577,8 @@ textarea {
   .checkout-highlight {
     align-items: flex-start;
   }
+}
+
 .checkout-step {
   display: inline-flex;
   width: fit-content;
