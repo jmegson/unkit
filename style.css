@@ -321,3 +321,22 @@ footer {
     gap: 8px;
   }
 }
+.about-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto 28px;
+  padding: 12px 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--green);
+  font-size: 1rem;
+  font-weight: 850;
+  box-shadow: 0 10px 24px rgba(31, 77, 58, 0.08);
+}
+
+.flavor-inner {
+  text-align: center;
+}
